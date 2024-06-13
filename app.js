@@ -9,7 +9,14 @@ import route from "./Routes/Route.js";
 import { Server } from "socket.io";
 
 const app = express()
-app.use(cors())
+
+app.use(cors({
+    origin: 'https://resplendent-kataifi-ca7e6a.netlify.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204
+  }));
+
 app.use(bodyParser.json({extended: true}))
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -19,9 +26,11 @@ Connection()
 
 const server = http.createServer(app)
 const io = new Server(server, {
-    cors:{
-        origin: 'https://animated-marshmallow-ffacab.netlify.app'
-    }
+    cors: {
+    origin: 'https://resplendent-kataifi-ca7e6a.netlify.app',
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
 })
 
 io.on('connection', (socket)=>{
