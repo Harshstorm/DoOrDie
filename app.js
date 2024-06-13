@@ -20,7 +20,7 @@ app.use(cors({
 app.use(bodyParser.json({extended: true}))
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.use('/', route )
+app.use('https://doordie-tsgg.onrender.com', route )
 
 Connection()
 
