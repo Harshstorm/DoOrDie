@@ -20,7 +20,7 @@ app.use(cors({
 app.use(bodyParser.json({extended: true}))
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.use('https://doordie-tsgg.onrender.com', route )
+app.use('https://resplendent-kataifi-ca7e6a.netlify.app', route )
 
 Connection()
 
