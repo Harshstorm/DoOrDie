@@ -10,9 +10,7 @@ const MessagesSchema = new mongoose.Schema({
     conversationId:{
         type: String
     }
-}, {
-    timestamps: true
-})
+}, { timestamps: true })
 
  const MessagesModel = new mongoose.model('Messages', MessagesSchema)
 
