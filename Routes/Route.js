@@ -15,16 +15,16 @@ import { deleteMessage } from "../Controllers/DeleteMessage.js";
 
 const router = express.Router()
 
-router.post('/saveuser', saveUser)
-router.post('/userlogin', userLogIn)
-router.post('/getuser', getUser)
-router.post('/setavatar', setAvatar )
-router.post('/getavatar', getAvatar )
-router.get('/getallusers', getallUsers )
-router.post('/setmessage', saveMessage )
-router.post('/getmessages', getMessages )
-router.post('/setconvo', setConvo )
-router.post('/getconvo', getConvo )
-router.post('/deletemessage', deleteMessage )
+router.post('/register/saveuser', saveUser)
+router.post('/login/userlogin', userLogIn)
+router.post('/login/getuser', getUser)
+router.post('/register/setavatar', setAvatar )
+router.post('/register/getavatar', getAvatar )
+router.get ('/login/getallusers', getallUsers )
+router.post('/message/setmessage', saveMessage )
+router.post('/message/getmessages', getMessages )
+router.post('/conversation/setconvo', setConvo )
+router.post('/conversation/getconvo', getConvo )
+router.post('/message/deletemessage', deleteMessage )
 
 export default router
