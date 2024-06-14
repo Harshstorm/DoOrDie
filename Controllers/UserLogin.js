@@ -5,12 +5,12 @@ import UsersModel from "../Models/UsersModel.js";
 
 export const userLogIn = async(req, res) =>{
     try{
-     let user = await UsersModel.findOne({email: req.body.email})
-      .then(user=>{
-        if(user){
-            if(user.password == req.body.password){
+     let data = await UsersModel.findOne({email: req.body.email})
+
+     if(data){
+            if(data.password == req.body.password){
                 res.json({
-                    User: user,
+                    User: data,
                     string: 'Successfull'
                 })
             }else{
@@ -19,7 +19,7 @@ export const userLogIn = async(req, res) =>{
         }else{
             res.json('Email not registered')
         }
-      })
+
     }catch(error){
         console.log(error.message)
     }

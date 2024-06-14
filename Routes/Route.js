@@ -10,7 +10,6 @@ import { getallUsers } from "../Controllers/GetAllUsers.js";
 import { saveMessage } from "../Controllers/SaveMessage.js";
 import { getMessages } from "../Controllers/GetMessages.js";
 import { setConvo } from "../Controllers/SetConvo.js";
-import { getConvo } from "../Controllers/GetConvo.js";
 import { deleteMessage } from "../Controllers/DeleteMessage.js";
 
 const router = express.Router()
@@ -24,7 +23,6 @@ router.get ('/login/getallusers', getallUsers )
 router.post('/message/setmessage', saveMessage )
 router.post('/message/getmessages', getMessages )
 router.post('/conversation/setconvo', setConvo )
-router.post('/conversation/getconvo', getConvo )
 router.post('/message/deletemessage', deleteMessage )
 
 export default router
