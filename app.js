@@ -11,27 +11,27 @@ import { Server } from "socket.io";
 const app = express()
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://resplendent-kataifi-ca7e6a.netlify.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204
   }));
-
-app.use(bodyParser.json({extended: true}))
-app.use(bodyParser.urlencoded({extended: true}))
-
-app.use('/', route )
-
-Connection()
-
-const server = http.createServer(app)
-const io = new Server(server, {
+  
+  app.use(bodyParser.json({ extended: true }));
+  app.use(bodyParser.urlencoded({ extended: true }));
+  
+  app.use('/', route);
+  
+  Connection();
+  
+  const server = http.createServer(app);
+  const io = new Server(server, {
     cors: {
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST'],
-    credentials: true
-  }
-})
+      origin: 'https://resplendent-kataifi-ca7e6a.netlify.app',
+      methods: ['GET', 'POST'],
+      credentials: true
+    }
+  });
 
 io.on('connection', (socket)=>{
     console.log('user connnected',socket.id)
