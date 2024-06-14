@@ -11,7 +11,7 @@ import { Server } from "socket.io";
 const app = express()
 
 app.use(cors({
-    origin: 'https://666c221a8ce078757ee922f4--resplendent-kataifi-ca7e6a.netlify.app/',
+    origin: 'https://resplendent-kataifi-ca7e6a.netlify.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204
@@ -27,7 +27,7 @@ app.use(cors({
   const server = http.createServer(app);
   const io = new Server(server, {
     cors: {
-      origin: 'https://666c221a8ce078757ee922f4--resplendent-kataifi-ca7e6a.netlify.app/',
+      origin: 'https://resplendent-kataifi-ca7e6a.netlify.app',
       methods: ['GET', 'POST'],
       credentials: true
     }
