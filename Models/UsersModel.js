@@ -8,7 +8,7 @@ const UsersSchema = new Schema({
         type: String
     },
     email:{
-        type: String
+        type: String, required: true, unique: true 
     },
     password:{
         type: String
@@ -20,6 +20,8 @@ const UsersSchema = new Schema({
         type: String
     }
 })
+
+UsersSchema.index({ email: 1 });
 
 const UsersModel = new mongoose.model('All_Users', UsersSchema)
 
